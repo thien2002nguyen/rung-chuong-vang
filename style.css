@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(
+    circle at center,
+    #fff3a6 0%,
+    #f7c928 35%,
+    #d88900 100%
+  );
+  font-family: Arial, sans-serif;
+  opacity: 1;
+  transition: 1s;
+}
+
+.sound-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  transition: 0.3s;
+  z-index: 10;
+}
+
+.sound-btn:hover {
+  transform: scale(1.15);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+body:before {
+  content: "";
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.55),
+    transparent 65%
+  );
+  animation: lightMove 5s infinite alternate;
+}
+
+@keyframes lightMove {
+  from {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+}
+
+.intro {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: 2;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 650px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title-svg {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1500px;
+  height: 320px;
+  overflow: visible;
+  animation: titleGlow 2s infinite alternate;
+}
+
+.title-svg text {
+  fill: #d40000;
+  font-size: 100px;
+  font-weight: 900;
+  letter-spacing: 10px;
+  text-anchor: middle;
+  stroke: #ffd84d;
+  stroke-width: 6px;
+  paint-order: stroke;
+  filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.45))
+    drop-shadow(0 0 20px #ffdd55);
+}
+
+@keyframes titleGlow {
+  from {
+    filter: brightness(1);
+  }
+  to {
+    filter: brightness(1.25);
+  }
+}
+
+.main-bell {
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 160px;
+  filter: drop-shadow(0 20px 15px rgba(0, 0, 0, 0.4));
+  animation: bellShake 3s infinite;
+}
+
+@keyframes bellShake {
+  0%,
+  100% {
+    transform: translateX(-50%) rotate(0);
+  }
+  10% {
+    transform: translateX(-50%) rotate(8deg);
+  }
+  20% {
+    transform: translateX(-50%) rotate(-8deg);
+  }
+  30% {
+    transform: translateX(-50%) rotate(5deg);
+  }
+  40% {
+    transform: translateX(-50%) rotate(0);
+  }
+}
+
+.start-btn {
+  position: absolute;
+  top: 500px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 40px;
+  border-radius: 50px;
+  border: 3px solid #ffd84d;
+  background: linear-gradient(180deg, #ff3333, #a80000);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.35),
+    0 0 20px rgba(255, 220, 50, 0.8);
+  transition: 0.3s;
+}
+
+.start-btn:hover {
+  transform: translateX(-50%) scale(1.08);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    0 0 35px #fff;
+}
+
+.bell-rain {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.falling-bell {
+  position: absolute;
+  top: -50px;
+  animation: fall linear infinite;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 10px #fff);
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-100px) rotate(0);
+  }
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}

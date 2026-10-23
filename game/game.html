@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Rung Chuông Vàng</title>
+      <link rel="stylesheet" href="game.css">
+      <link rel="icon" href="data:image/svg+xml,
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+                  <text y='.9em' font-size='90'>🔔</text>
+            </svg>">
+</head>
+
+<body>
+
+      <div class="bell-rain"></div>
+
+      <div id="gameScreen">
+
+            <div id="questionBox">
+
+                  <button id="backBtn">⬅</button>
+
+                  <h2 id="question"></h2>
+
+                  <div class="clock">
+                        <div id="timer">15</div>
+                  </div>
+
+                  <div id="answers"></div>
+
+                  <div id="result"></div>
+
+
+                  <div id="buttonArea">
+
+                        <button id="showAnswerBtn">
+                              ĐÁP ÁN
+                        </button>
+
+                        <button id="nextBtn">
+                              CÂU TIẾP THEO
+                        </button>
+
+                        <button id="endBtn">
+                              KẾT THÚC
+                        </button>
+
+                        <button id="bonusBtn">
+                              CÂU HỎI PHỤ
+                        </button>
+
+                  </div>
+
+
+            </div>
+
+      </div>
+
+
+      <div id="thank">
+            <h1>🎉 CHƯƠNG TRÌNH KẾT THÚC 🎉</h1>
+            <p>Cảm ơn bạn đã tham gia!</p>
+      </div>
+
+
+      <audio id="musicAnswer" preload="auto">
+            <source src="../audio/nhacnen-cautraloi.mp3" type="audio/mp3">
+      </audio>
+
+
+      <audio id="musicTimer" preload="auto">
+            <source src="../audio/nhacnen-tinhgio.mp3" type="audio/mp3">
+      </audio>
+
+      <audio id="musicEnd" preload="auto">
+            <source src="../audio/nhacnen-nentrochoi.mp3" type="audio/mp3">
+      </audio>
+
+      <script src="../data/question.js"></script>
+      <script src="game.js"></script>
+
+</body>
+
+</html>

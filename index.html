@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Rung Chuông Vàng</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="icon" href="data:image/svg+xml,
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+                  <text y='.9em' font-size='90'>🔔</text>
+            </svg>">
+</head>
+
+<body>
+
+      <button class="sound-btn" id="soundBtn">
+            🔇
+      </button>
+
+      <div class="bell-rain"></div>
+
+      <main class="intro">
+
+            <div class="content">
+                  <svg class="title-svg" viewBox="0 0 1600 400">
+                        <defs>
+                              <path id="textCurve" d="M150 300 Q800 0 1450 300" />
+                        </defs>
+
+                        <text>
+                              <textPath href="#textCurve" startOffset="50%">
+                                    RUNG CHUÔNG VÀNG
+                              </textPath>
+                        </text>
+                  </svg>
+
+                  <div class="main-bell">
+                        🔔
+                  </div>
+
+
+                  <button class="start-btn">
+                        BẮT ĐẦU
+                  </button>
+            </div>
+
+      </main>
+
+      <audio id="introMusic">
+            <source src="audio/nhacnen-modau.mp3" type="audio/mpeg">
+      </audio>
+
+      <audio id="gameMusic" loop>
+            <source src="audio/nhacnen-nentrochoi.mp3" type="audio/mpeg">
+      </audio>
+
+      <script src="script.js"></script>
+
+</body>
+
+</html>
